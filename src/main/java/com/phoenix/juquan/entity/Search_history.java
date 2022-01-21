@@ -15,24 +15,18 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 @Builder
 @ApiModel("Comment 评论")
-public class Comment implements Serializable {
+public class Search_history implements Serializable {
     @Id
     @ApiModelProperty("id")
     private Long id;
 
-    @ApiModelProperty("笔记id")
-    private Long objectId;
-
     @ApiModelProperty("用户剧圈号")
     private String juQuanNum;
 
-    @ApiModelProperty("评论时间")
-    private Timestamp commentTime;
+    @ApiModelProperty("搜索名")
+    private String name;
 
-    @ApiModelProperty("评论内容")
-    private String content;
-
-    @ApiModelProperty("评论点赞数")
-    private int likes;
+    @ApiModelProperty("搜索时间")
+    private String searchTime;
 
 }

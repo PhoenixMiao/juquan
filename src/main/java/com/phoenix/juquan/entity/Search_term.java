@@ -8,31 +8,21 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import javax.persistence.Id;
 import java.io.Serializable;
-import java.sql.Timestamp;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @ApiModel("Comment 评论")
-public class Comment implements Serializable {
+public class Search_term implements Serializable {
     @Id
     @ApiModelProperty("id")
     private Long id;
 
-    @ApiModelProperty("笔记id")
-    private Long objectId;
+    @ApiModelProperty("搜索名")
+    private String name;
 
-    @ApiModelProperty("用户剧圈号")
-    private String juQuanNum;
-
-    @ApiModelProperty("评论时间")
-    private Timestamp commentTime;
-
-    @ApiModelProperty("评论内容")
-    private String content;
-
-    @ApiModelProperty("评论点赞数")
-    private int likes;
+    @ApiModelProperty("点击量")
+    private int hits;
 
 }
