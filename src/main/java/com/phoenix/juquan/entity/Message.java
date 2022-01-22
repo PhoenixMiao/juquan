@@ -14,18 +14,21 @@ import java.sql.Timestamp;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@ApiModel("follow 关注")
-public class follow {
+@ApiModel("message 消息")
+public class Message {
     @Id
     @ApiModelProperty("id")
     private long id;
 
-    @ApiModelProperty("关注者")
-    private String followerNum;
+    @ApiModelProperty("发出用户")
+    private String senderNum;
 
-    @ApiModelProperty("被关注者")
-    private String followedNum;
+    @ApiModelProperty("接受用户")
+    private String receiverNum;
 
-    @ApiModelProperty("关注时间")
-    private Timestamp followTime;
+    @ApiModelProperty("发送时间")
+    private Timestamp sendTime;
+
+    @ApiModelProperty("是否已读")
+    private boolean isRead;
 }

@@ -14,16 +14,18 @@ import java.sql.Timestamp;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@ApiModel("relation 店铺中剧本")
-public class relation {
+@ApiModel("follow 关注")
+public class Follow {
     @Id
     @ApiModelProperty("id")
     private long id;
 
-    @ApiModelProperty("店铺id")
-    private long storeId;
+    @ApiModelProperty("关注者")
+    private String followerNum;
 
-    @ApiModelProperty("剧本id")
-    private long scriptId;
+    @ApiModelProperty("被关注者")
+    private String followedNum;
 
+    @ApiModelProperty("关注时间")
+    private Timestamp followTime;
 }
