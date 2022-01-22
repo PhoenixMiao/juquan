@@ -14,21 +14,16 @@ import java.sql.Timestamp;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@ApiModel("message 消息")
-public class message {
+@ApiModel("relation 店铺中剧本")
+public class Relation {
     @Id
     @ApiModelProperty("id")
     private long id;
 
-    @ApiModelProperty("发出用户")
-    private String senderNum;
+    @ApiModelProperty("店铺id")
+    private long storeId;
 
-    @ApiModelProperty("接受用户")
-    private String receiverNum;
+    @ApiModelProperty("剧本id")
+    private long scriptId;
 
-    @ApiModelProperty("发送时间")
-    private Timestamp sendTime;
-
-    @ApiModelProperty("是否已读")
-    private boolean isRead;
 }

@@ -68,7 +68,7 @@ public class UserServiceImpl implements UserService {
 
         Long userId = userMapper.newUser(user);
 
-        userMapper.updateChuangNum("hs"+String.format("%08d", userId),userId);
+        userMapper.updateJuQuanNum("hs"+String.format("%08d", userId),userId);
 
         return new SessionData(user);
     }
