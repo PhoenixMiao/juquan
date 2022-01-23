@@ -2,6 +2,7 @@ package com.phoenix.juquan.mapper;
 
 import com.github.pagehelper.PageHelper;
 import com.phoenix.juquan.MyMapper;
+import com.phoenix.juquan.dto.BriefNote;
 import com.phoenix.juquan.entity.Note;
 import com.phoenix.juquan.entity.User;
 import org.apache.ibatis.annotations.*;
@@ -15,6 +16,9 @@ public interface NoteMapper extends MyMapper<Note> {
 
     @Select("SELECT * FROM note WHERE id=#{id}")
     Note getNoteByID(@Param("id") long id);
+
+    @Select("SELECT id FROM note")
+    List<BriefNote> getBriefNoteList();
 
     @Select("SELECT title FROM note")
     List<String> getAllTitle();

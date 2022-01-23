@@ -1,5 +1,6 @@
 package com.phoenix.juquan.controller;
 
+import com.phoenix.juquan.annotation.Auth;
 import com.phoenix.juquan.util.SessionUtils;
 import com.phoenix.juquan.dto.SessionData;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,10 +17,11 @@ public class MyController {
     @Autowired
     private SessionUtils sessionUtils;
 
+    @Auth
     @GetMapping("/get")
     @Deprecated
     public Object get(){
-        sessionUtils.getUserId();
+        Long juquan = sessionUtils.getUserJuQuanNum();
         SessionData sessionData = sessionUtils.getSessionData();
         return null;
     }
