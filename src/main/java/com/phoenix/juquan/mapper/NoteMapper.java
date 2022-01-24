@@ -15,7 +15,7 @@ public interface NoteMapper extends MyMapper<Note> {
     Long newUser(User user);
 
     @Select("SELECT * FROM note WHERE id=#{id}")
-    Note getNoteByID(@Param("id") long id);
+    BriefNote getNoteById(@Param("id") long id);
 
     @Select("SELECT id FROM note")
     List<BriefNote> getBriefNoteList();
