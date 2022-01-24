@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 public class ResultAspect {
 
 
-    @Around("execution(public * com.phoenix.juquan.controller.*.*(..))")
+    @Around("execution(public * com.phoenix.juquan.controller.*.*.*(..))")
     public Result doAroundAdvice(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
 
         Object object = proceedingJoinPoint.proceed();
