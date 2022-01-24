@@ -28,7 +28,17 @@ public class NoteController {
 
     @GetMapping("/list")
     @ApiOperation("返回笔记列表")
-    public Object getBriefNoteList(@NotNull @Validated @RequestBody PageParam pageParam){
+    public Object getBriefNoteList(@NotNull @Validated PageParam pageParam){
         return noteService.getBriefNotePage(pageParam);
-    }
+    };
+
+    @GetMapping("/info")
+    @ApiOperation("返回笔记详情")
+    @ApiImplicitParam(name = "id",value = "所要查找的id",paramType = "query",dataType = "Long")
+    public Object getBriefNoteInfo(@NotNull @Validated @RequestParam(value = "id") Long id){
+        return noteService.getBriefNoteInfo(id);
+    };
+
+
+
 }

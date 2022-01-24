@@ -26,4 +26,10 @@ public class NoteServiceImpl implements NoteService {
         List<BriefNote> briefNoteList = noteMapper.getBriefNoteList();
         return new Page<>(new PageInfo<>(briefNoteList));
     }
+
+    @Override
+    public  BriefNote getBriefNoteInfo(long id){
+        BriefNote briefNote = noteMapper.getNoteById(id);
+        return briefNote;
+    }
 }
