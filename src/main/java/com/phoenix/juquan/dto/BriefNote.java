@@ -1,24 +1,27 @@
-package com.phoenix.juquan.entity;
+package com.phoenix.juquan.dto;
 
+import com.phoenix.juquan.entity.Note;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import javax.persistence.Id;
-import java.io.Serializable;
+
 import java.sql.Timestamp;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@ApiModel("note 笔记")
-public class note {
-    @Id
-    @ApiModelProperty("用户id")
-    private long id;
+@ApiModel("BriefNote 列表返回的笔记")
+public class BriefNote {
+    /**
+     * {@link Note}
+     */
+
+    @ApiModelProperty("笔记id")
+    private Long id;
 
     @ApiModelProperty("标题")
     private String title;
@@ -49,4 +52,8 @@ public class note {
 
     @ApiModelProperty("浏览次数")
     private int browse;
+
+    public BriefNote(Long id){
+        this.id = id;
+    }
 }

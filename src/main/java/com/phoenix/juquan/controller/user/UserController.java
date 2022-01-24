@@ -1,4 +1,4 @@
-package com.phoenix.juquan.controller;
+package com.phoenix.juquan.controller.user;
 
 import com.phoenix.juquan.dto.SessionData;
 import com.phoenix.juquan.service.UserService;

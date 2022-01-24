@@ -14,8 +14,8 @@ import java.sql.Timestamp;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@ApiModel("collection 收藏")
-public class likes {
+@ApiModel("Collection 收藏")
+public class Collection {
     @Id
     @ApiModelProperty("id")
     private long id;
@@ -29,6 +29,6 @@ public class likes {
     @ApiModelProperty("用户剧圈号")
     private String juQuanNum;
 
-    @ApiModelProperty("点赞时间")
-    private Timestamp likeTime;
+    @ApiModelProperty("收藏时间")
+    private Timestamp collectTime;
 }

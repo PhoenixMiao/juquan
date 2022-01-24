@@ -14,7 +14,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Builder
 @ApiModel("companyCertification 公司认证")
-public class companyCertification {
+public class CompanyCertification {
     @Id
     @ApiModelProperty("用户id")
     private long id;

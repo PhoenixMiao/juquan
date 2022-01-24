@@ -15,7 +15,7 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 @Builder
 @ApiModel("store 店铺")
-public class store {
+public class Store {
     @Id
     @ApiModelProperty("id")
     private long id;
