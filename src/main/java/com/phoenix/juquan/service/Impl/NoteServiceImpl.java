@@ -12,7 +12,6 @@ import com.phoenix.juquan.service.NoteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -33,5 +32,9 @@ public class NoteServiceImpl implements NoteService {
     public  BriefNote getBriefNoteInfo(long id){
         BriefNote briefNote = noteMapper.getNoteById(id);
         return briefNote;
+    }
+    @Override
+    public void deleteNoteById(long id){
+        noteMapper.deleteNoteById(id);
     }
 }
