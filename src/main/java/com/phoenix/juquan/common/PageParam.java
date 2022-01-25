@@ -26,4 +26,9 @@ public class PageParam {
 
     @ApiModelProperty("格式:字段名 排序规律,例:\"id asc\"")
     private String orderBy="id asc";
+
+    public PageParam(Integer pageNum,Integer pageSize){
+        this.pageNum = pageNum;
+        this.pageSize = pageSize;
+    }
 }
