@@ -39,6 +39,11 @@ public class NoteController {
         return noteService.getBriefNoteInfo(id);
     };
 
-
+    @PostMapping("/delete")
+    @ApiOperation("删除笔记")
+    @ApiImplicitParam(name = "id", value = "所要删除笔记的id", paramType = "query", dataType = "Long")
+    public void deleteNote(@NotNull @Validated @RequestParam(value = "id") Long id) {
+        noteService.deleteNoteById(id);
+    }
 
 }
