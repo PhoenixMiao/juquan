@@ -15,13 +15,13 @@ public interface NoteMapper extends MyMapper<Note> {
     Long newUser(User user);
 
     @Select("SELECT * FROM note WHERE id=#{id}")
-    Note getNoteByID(@Param("id") long id);
+    BriefNote getNoteById(@Param("id") long id);
 
     @Select("SELECT id FROM note")
     List<BriefNote> getBriefNoteList();
 
-    @Select("SELECT title FROM note")
-    List<String> getAllTitle();
+    @Delete("DELETE FROM note WHERE id=#{id}")
+    void deleteNoteById(@Param("id") Long id);
 
     @Select("SELECT * FROM note")
     List<Note> getAllNote();
