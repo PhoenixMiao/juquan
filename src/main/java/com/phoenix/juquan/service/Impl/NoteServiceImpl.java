@@ -6,6 +6,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.phoenix.juquan.common.Page;
 import com.phoenix.juquan.common.PageParam;
+import com.phoenix.juquan.common.Result;
 import com.phoenix.juquan.dto.BriefNote;
 import com.phoenix.juquan.mapper.NoteMapper;
 import com.phoenix.juquan.service.NoteService;
@@ -37,4 +38,6 @@ public class NoteServiceImpl implements NoteService {
     public void deleteNoteById(long id){
         noteMapper.deleteNoteById(id);
     }
+
+
 }
