@@ -10,9 +10,8 @@ import org.apache.ibatis.annotations.*;
 import java.util.List;
 
 public interface NoteMapper extends MyMapper<Note> {
-    @Insert("INSERT INTO user(createTime,openId,unionId,sessionKey,sessionId) VALUES (#{createTime},#{openId},#{unionId},#{sessionKey},#{sessionId})")
-    @Options(useGeneratedKeys=true, keyProperty="id")
-    Long newUser(User user);
+    @Insert("INSERT INTO note VALUES (null,#{status})")
+    int insertDriver(@Param("status") Integer status);
 
     @Select("SELECT * FROM note WHERE id=#{id}")
     BriefNote getNoteById(@Param("id") long id);

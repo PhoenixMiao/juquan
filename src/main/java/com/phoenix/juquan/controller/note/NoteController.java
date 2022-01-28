@@ -1,6 +1,9 @@
 package com.phoenix.juquan.controller.note;
 
+import com.phoenix.juquan.annotation.Auth;
 import com.phoenix.juquan.common.PageParam;
+import com.phoenix.juquan.common.Result;
+import com.phoenix.juquan.dto.AddToScriptRequest;
 import com.phoenix.juquan.service.NoteService;
 import com.phoenix.juquan.util.SessionUtils;
 import io.swagger.annotations.Api;
@@ -10,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 @RestController
@@ -40,15 +44,17 @@ public class NoteController {
 
     ;
 
+    @Auth
     @PostMapping("/delete")
     @ApiOperation("删除笔记")
     @ApiImplicitParam(name = "id", value = "所要删除笔记的id", paramType = "query", dataType = "Long")
-    public int deleteNote(@NotNull @Validated @RequestParam(value = "id") Long id) {
+    public void deleteNote(@NotNull @Validated @RequestParam(value = "id") Long id) {
         noteService.deleteNoteById(id);
-        return 1;
     }
 
+
     ;
+
 
 }
 

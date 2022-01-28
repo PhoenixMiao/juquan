@@ -10,4 +10,8 @@ public interface ScriptService {
     Page<BriefScript> getBriefScriptPage(PageParam pageParam);
 
     BriefScript getBriefScriptInfo(Long id);
+
+    void AddToScript(String name, String type, String traits, String content, String picture);
+
+    void deleteScriptById(Long id);
 }
