@@ -31,11 +31,11 @@ public class SessionUtils {
     @Autowired
     private UserMapper userMapper;
 
-    public Long getUserId(){
+    public Long getUserJuQuanNum(){
         return Optional
                 .ofNullable(getSessionData())
                 .orElse(new SessionData())
-                .getId();
+                .getJuQuanNum();
     }
 
     public SessionData getSessionData(){

@@ -28,6 +28,8 @@ public class SessionData implements Serializable {
      */
     @ApiModelProperty("用户id")
     private Long id;
+    @ApiModelProperty("剧圈号")
+    private Long juQuanNum;
     @ApiModelProperty("注册时间")
     private String create_time;
     @ApiModelProperty("昵称")

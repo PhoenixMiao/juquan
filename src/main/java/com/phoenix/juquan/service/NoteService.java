@@ -8,4 +8,6 @@ public interface NoteService {
     Page<BriefNote> getBriefNotePage(PageParam pageParam);
 
     BriefNote getBriefNoteInfo(long id);
+
+    void deleteNoteById(long id);
 }
