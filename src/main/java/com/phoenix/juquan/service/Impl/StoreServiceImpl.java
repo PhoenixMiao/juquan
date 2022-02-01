@@ -34,4 +34,9 @@ public class StoreServiceImpl implements StoreService {
 
         return storeMapper.getStoreById(id);
     }
+
+    public void AddToStore(String name, String location, String telephone, String content, String picture){
+        storeMapper.addToStore(name, location, telephone, content, picture);
+    }
+
 }

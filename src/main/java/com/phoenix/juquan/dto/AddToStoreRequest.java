@@ -1,7 +1,7 @@
 package com.phoenix.juquan.dto;
 
 import com.phoenix.juquan.entity.Note;
-import com.phoenix.juquan.entity.Script;
+import com.phoenix.juquan.entity.Store;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
@@ -16,24 +16,24 @@ import java.sql.Timestamp;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@ApiModel("AddToScriptRequest 添加的剧本")
-public class AddToScriptRequest {
+@ApiModel("AddToStoreRequest 添加的店铺")
+public class AddToStoreRequest {
     /**
-     * {@link Script}
+     * {@link Store}
      */
 
-    @ApiModelProperty("剧本名")
+    @ApiModelProperty("店铺名称")
     private String name;
 
-    @ApiModelProperty("类型")
-    private String type;
+    @ApiModelProperty("位置")
+    private String location;
 
-    @ApiModelProperty("特征")
-    private String traits;
+    @ApiModelProperty("电话")
+    private String telephone;
 
     @ApiModelProperty("详情")
     private String content;
 
-    @ApiModelProperty("图片 地址或是序号")
+    @ApiModelProperty("图片（地址或是序号）")
     private String picture;
 }
