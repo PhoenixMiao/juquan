@@ -9,4 +9,6 @@ public interface StoreService {
     Page<BriefStore> getBriefStorePage(PageParam pageParam);
 
     BriefStore getBriefStoreInfo(Long id);
+
+    void AddToStore(String name, String location, String telephone, String content, String picture);
 }
