@@ -2,6 +2,8 @@ package com.phoenix.juquan.controller.store;
 
 import com.phoenix.juquan.common.Page;
 import com.phoenix.juquan.common.PageParam;
+import com.phoenix.juquan.dto.AddToScriptRequest;
+import com.phoenix.juquan.dto.AddToStoreRequest;
 import com.phoenix.juquan.dto.BriefNote;
 import com.phoenix.juquan.service.NoteService;
 import com.phoenix.juquan.service.StoreService;
@@ -14,10 +16,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 @RestController
-@Api("笔记相关接口")
+@Api("店铺相关接口")
 @RequestMapping("/store")
 @Validated
 public class StoreController {
@@ -40,6 +43,15 @@ public class StoreController {
         return storeService.getBriefStoreInfo(id);
     };
 
-
+    @PostMapping("/add")
+    @ApiOperation(value="添加店铺",response = String.class)
+    public Object addToStore(@NotNull @Valid @RequestBody AddToStoreRequest addToStoreRequest){
+        storeService.AddToStore(addToStoreRequest.getName(),
+                addToStoreRequest.getLocation(),
+                addToStoreRequest.getTelephone(),
+                addToStoreRequest.getContent(),
+                addToStoreRequest.getPicture());
+        return "操作成功";
+    }
 
 }
