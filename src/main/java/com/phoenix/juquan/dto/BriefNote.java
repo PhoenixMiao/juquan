@@ -53,7 +53,5 @@ public class BriefNote {
     @ApiModelProperty("浏览次数")
     private int browse;
 
-    public BriefNote(Long id){
-        this.id = id;
-    }
+
 }

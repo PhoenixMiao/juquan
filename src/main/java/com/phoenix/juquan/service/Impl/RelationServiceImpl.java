@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class RelationServiceIpml implements RelationService {
+public class RelationServiceImpl implements RelationService {
     @Autowired
     private RelationMapper relationMapper;
 

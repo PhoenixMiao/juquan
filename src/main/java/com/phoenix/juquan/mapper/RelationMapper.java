@@ -12,13 +12,13 @@ import java.util.List;
 
 @Repository
 public interface RelationMapper {
-    @Select("SELECT storeId FROM relation WHERE scriptId = #{scriptId}")
-    List<BriefRelation> getStoreIdByScriptId(@Param("scriptId")long scriptId);
+    @Select("SELECT store_id FROM relation WHERE script_id = #{script_id}")
+    List<BriefRelation> getStoreIdByScriptId(@Param("script_id")long scriptId);
 
-    @Insert("INSERT INTO relation VALUE(null,#{storeId},#{scriptId})")
-    void addRelation(@Param("storeId") long storeId,
-                     @Param("scriptId") long scriptId);
+    @Insert("INSERT INTO relation VALUE(null,#{store_id},#{script_id})")
+    void addRelation(@Param("store_id") long storeId,
+                     @Param("script_id") long scriptId);
 
-    @Select("SELECT scriptId FROM relation WHERE storeId = #{storeId}")
-    List<BriefRelation> getScriptIdByStoreId(@Param("storeId")long storeId);
+    @Select("SELECT script_id FROM relation WHERE store_id = #{store_id}")
+    List<BriefRelation> getScriptIdByStoreId(@Param("store_id")long storeId);
 }
