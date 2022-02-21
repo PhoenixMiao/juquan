@@ -12,5 +12,4 @@ public interface NoteService {
 
     void deleteNoteById(long id);
 
-
 }
