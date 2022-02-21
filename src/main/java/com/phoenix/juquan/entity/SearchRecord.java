@@ -6,26 +6,26 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import javax.persistence.Id;
+import org.springframework.data.annotation.Id;
+
 import java.io.Serializable;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@ApiModel("Comment 评论")
-public class Search_history implements Serializable {
+@ApiModel("SearchRecord 搜索记录")
+public class SearchRecord implements Serializable {
     @Id
     @ApiModelProperty("id")
     private Long id;
 
     @ApiModelProperty("用户剧圈号")
-    private String juQuanNum;
+    private Long JuQuanNum;
 
-    @ApiModelProperty("搜索名")
-    private String name;
+    @ApiModelProperty("搜索内容")
+    private String contents;
 
     @ApiModelProperty("搜索时间")
-    private String searchTime;
-
+    private String create_time;
 }

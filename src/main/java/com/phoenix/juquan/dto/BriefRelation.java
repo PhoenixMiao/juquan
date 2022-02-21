@@ -1,4 +1,5 @@
-package com.phoenix.juquan.entity;
+package com.phoenix.juquan.dto;
+
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -6,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 import javax.persistence.Id;
 
 
@@ -13,8 +15,11 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@ApiModel("relation 店铺中剧本")
-public class Relation {
+@ApiModel("BriefRelation 返回店铺中的剧本")
+public class BriefRelation {
+    /**
+     * {@link com.phoenix.juquan.entity.Relation}
+     */
     @Id
     @ApiModelProperty("id")
     private long id;
@@ -24,5 +29,4 @@ public class Relation {
 
     @ApiModelProperty("剧本id")
     private long scriptId;
-
 }
