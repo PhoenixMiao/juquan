@@ -6,9 +6,10 @@ import com.phoenix.juquan.dto.BriefNote;
 import com.phoenix.juquan.entity.Note;
 import com.phoenix.juquan.entity.User;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
+@Repository
 public interface NoteMapper extends MyMapper<Note> {
     @Insert("INSERT INTO note VALUES (null,#{status})")
     int insertDriver(@Param("status") Integer status);
