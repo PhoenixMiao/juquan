@@ -6,9 +6,10 @@ import com.phoenix.juquan.dto.BriefStore;
 import com.phoenix.juquan.entity.Note;
 import com.phoenix.juquan.entity.Store;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
+@Repository
 public interface StoreMapper extends MyMapper<Store>{
     @Select("SELECT * FROM store WHERE id=#{id}")
     BriefStore getStoreById(@Param("id") long id);

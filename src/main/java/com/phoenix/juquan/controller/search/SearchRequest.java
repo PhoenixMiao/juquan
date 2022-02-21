@@ -20,7 +20,7 @@ import javax.validation.constraints.NotNull;
 @ApiModel("SearchRequest 搜索请求")
 public class SearchRequest {
     @ApiModelProperty("搜索内容")
-    private String contents;
+    private String content;
 
     /*@Min(value = 1,message = "type字段必须为1或2或3或4" )
     @Max(value = 4,message = "type字段必须为1或2或3或4" )

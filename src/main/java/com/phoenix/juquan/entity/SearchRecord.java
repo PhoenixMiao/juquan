@@ -21,11 +21,11 @@ public class SearchRecord implements Serializable {
     private Long id;
 
     @ApiModelProperty("用户剧圈号")
-    private Long JuQuanNum;
+    private Long ju_quan_num;
 
     @ApiModelProperty("搜索内容")
-    private String contents;
+    private String content;
 
     @ApiModelProperty("搜索时间")
-    private String create_time;
+    private String search_time;
 }
