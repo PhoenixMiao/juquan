@@ -3,6 +3,7 @@ package com.phoenix.juquan.controller.search;
 
 
 import com.phoenix.juquan.entity.Note;
+import com.phoenix.juquan.entity.Store;
 import com.phoenix.juquan.service.SearchService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiModelProperty;
@@ -25,8 +26,13 @@ public class SearchController {
 
     @GetMapping("/note_search")
     @ApiOperation(value = "搜索笔记",response = Note.class)
-    public Object search(@NotNull @Valid @RequestBody SearchRequest searchRequest){
+    public Object search_note(@NotNull @Valid @RequestBody SearchRequest searchRequest){
         return searchService.searchNote(searchRequest);
     }
 
+    @GetMapping("/store_search")
+    @ApiOperation(value = "搜索店铺",response = Store.class)
+    public Object search_store(@NotNull @Valid @RequestBody SearchRequest searchRequest){
+        return searchService.searchStore(searchRequest);
+    }
 }
